@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Generate Access Key</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="centered">
+  {% if session.get('logged_in') %}
+    <div class="card">
+      <h2>🛠️ Key Generator</h2>
+      
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form method="POST">
+        <label>
+          <input type="checkbox" name="is_permanent" id="permBox" onclick="toggleInput()"> Permanent Key
+        </label>
+        <input type="number" name="expiry_duration" id="expiryBox" placeholder="Temporary Key Expiry (minutes)" required>
+        <button type="submit">Generate</button>
+      </form>
+
+      <a href="/admin_dashboard" class="back-link">⬅ Back to Dashboard</a>
+    </div>
+  {% else %}
+    <script>window.location.href = "/admin_login";</script>
+  {% endif %}
+
+  <script>
+    function toggleInput() {
+      const permBox = document.getElementById('permBox');
+      const expiryBox = document.getElementById('expiryBox');
+      expiryBox.disabled = permBox.checked;
+      if (permBox.checked) {
+        expiryBox.removeAttribute('required');
+      } else {
+        expiryBox.setAttribute('required', 'true');
+      }
+    }
+  </script>
+</body>
+</html>

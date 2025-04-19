@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="centered">
+  <div class="card">
+    <h2>Login to Access Prediction</h2>
+    <form method="POST" action="/validate_key">
+      <input type="text" name="key" placeholder="Enter your access key" required>
+      <button type="submit">Unlock</button>
+    </form>
+  </div>
+</body>
+</html>

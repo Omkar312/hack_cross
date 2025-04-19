@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="centered">
+  <div class="card">
+    <h2>🔮 Prediction Portal</h2>
+    <p><strong>Current Period:</strong> {{ period }}</p>
+    <p><strong>Prediction:</strong> <span class="highlight">{{ prediction }}</span></p>
+    <a href="/" class="back-link">Logout</a>
+  </div>
+</body>
+</html>
+        

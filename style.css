@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    height: 100vh;
+  }
+  
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    background: #1e2a38;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .card h2 {
+    margin-bottom: 20px;
+    color: #00c6ff;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #00c6ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  button:hover {
+    background: #007ab3;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .back-link:hover {
+    color: #fff;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #3c4f63;
+    text-align: center;
+  }
+  
+  .highlight {
+    color: #00ffae;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
