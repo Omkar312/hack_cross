@@ -1,0 +1,51 @@
+{
+    "project_name": "flask_key_generator_app",
+    "files": {
+      "app.py": {
+        "description": "Main Python file where Flask app runs. Handles routes for admin login and key generation.",
+        "run": "This is the file you run to start the Flask application. It starts the server and listens for requests."
+      },
+      "templates": {
+        "description": "Folder containing HTML files.",
+        "files": {
+          "admin_login.html": {
+            "description": "HTML template for the admin login page. Admin enters password to log in.",
+            "used_in": "The `/admin_login` route in `app.py` renders this template."
+          },
+          "generate_key.html": {
+            "description": "HTML template for the key generation page. Only accessible after login.",
+            "used_in": "The `/generate_key` route in `app.py` renders this template when the admin is logged in."
+          }
+        }
+      },
+      "static": {
+        "description": "Folder containing static files like CSS, JS, and images.",
+        "files": {
+          "style.css": {
+            "description": "CSS file for styling the pages (login and key generation).",
+            "used_in": "This file is linked in the HTML files (admin_login.html and generate_key.html) to style them."
+          }
+        }
+      },
+      "requirements.txt": {
+        "description": "File to list the Python dependencies needed to run the app.",
+        "used_in": "Run the following command to install dependencies from this file: `pip install -r requirements.txt`"
+      },
+      "firebase_credentials.json": {
+        "description": "Firebase service account JSON file that contains the credentials to authenticate with Firebase.",
+        "used_in": "Used in `app.py` to initialize Firebase Admin SDK and interact with Firebase Firestore."
+      }
+    },
+    "run_steps": [
+      "1. Install the required packages using `pip install -r requirements.txt`.",
+      "2. Create Firebase project and download the `firebase_credentials.json` file (service account key) from Firebase console.",
+      "3. Place the `firebase_credentials.json` file in the project root directory.",
+      "4. Run the app with `python app.py` to start the Flask server.",
+      "5. Access the admin login page by going to `http://127.0.0.1:5000/admin_login`.",
+      "6. After logging in, you'll be redirected to the key generation page (`/generate_key`)."
+    ],
+    "flask_app_start": {
+      "file": "app.py",
+      "description": "This is the main file that starts the Flask application. The `app.run(debug=True)` command inside `app.py` starts the server and listens for incoming requests."
+    }
+  }
